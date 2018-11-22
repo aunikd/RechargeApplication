@@ -1,0 +1,14 @@
+create table recharge(phone_no number(10) primary key,
+amount number(10) not null, 
+operator varchar2(30) not null, 
+CONSTRAINT chk_Frequency check (operator in ('Vodafone', 'BSNL', 'Idea', 'Jio', 'Airtel')))
+
+select * from recharge
+insert into recharge values(9856214523,1000,'Vodafone')
+
+
+create table recharge_log(phone_no number(10) not null,
+amount number(10) not null, 
+operator varchar2(30) not null)
+
+select * from recharge_log
